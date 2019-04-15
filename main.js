@@ -37,6 +37,7 @@ console.log(Array.isArray(fruits));
 console.log(fruits.indexOf('oranges'));
 console.log(fruits);
 
+// Object literals
 const person = {
 	firstName: 'Hamal',
 	lastName: 'Patel',
@@ -51,13 +52,39 @@ const person = {
 
 console.log(person);
 
+// To get the full name
+console.log(person.firstName, person.lastName);
 
+// To get movies
+console.log(person.hobbies[1]);
 
+// To get the city
+console.log(person.address.city);
 
+// Arrays of objects
+const todos = [
+	{
+	id: 1,
+	text: 'Take out trash',
+	isCompleted: true
+	},
+	{
+	id: 2,
+	text: 'Meeting with boss',
+	isCompleted: true
+	},
+	{
+	id: 3,
+	text: 'Dentist appointment',
+	isCompleted: false
+	}		
+];
 
+console.log(todos[1].text); // To get 'meeting with boss'
 
-
-
+// To convert it to JSON to send data to server
+const todoJSON = JSON.stringify(todos);
+console.log(todoJSON);
 
 
 
