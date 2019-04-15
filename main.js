@@ -24,7 +24,41 @@ console.log(s.substring(0, 5).toUpperCase()); // Two methods can be chained toge
 const t = 'technology, computers, IT';
 console.log(t.split(', '));
 
-// Tp add a value
+// To add a value to the end or beginning, respectively
 const fruits = ['apples', 'oranges', 'banana'];
 fruits[3] = 'grapes';
+fruits.push('mangos');
+fruits.unshift('strawberries');
+
+// To check if it is an array or not
+console.log(Array.isArray(fruits));
+
+//To check the index of the value
+console.log(fruits.indexOf('oranges'));
 console.log(fruits);
+
+const person = {
+	firstName: 'Hamal',
+	lastName: 'Patel',
+	age: 25,
+	hobbies: ['music', 'movies', 'sports'],
+	address: {
+		street: 'random road',
+		city: 'London',
+		country: 'UK'
+	}
+}
+
+console.log(person);
+
+
+
+
+
+
+
+
+
+
+
+
