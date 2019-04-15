@@ -86,6 +86,40 @@ console.log(todos[1].text); // To get 'meeting with boss'
 const todoJSON = JSON.stringify(todos);
 console.log(todoJSON);
 
+// For loops
+for(let i = 0; i<10; i++){
+	console.log(`for loop number: ${i}`);
+}
+
+// while loops
+let i = 0;
+while(i < 10){
+	console.log(`while loop number: ${i}`);
+	i++;
+}
+
+// x can be anything
+for(let x of todos){
+	console.log(x.text);
+}
+
+
+// forEACH, the x variable can be anything
+todos.forEach(function(x){
+	console.log(x.text);
+});
+
+
+const todoText = todos.map(function(x){
+	return x.text;
+});
+
+console.log(todoText);
+
+
+
+
+
 
 
 
