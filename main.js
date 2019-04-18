@@ -180,5 +180,66 @@ console.log(str.slice(-4));				// the last 4 characters are displayed.
 console.log(str.slice(-9, -5));			// the second -5 cuts out the dog.
 // expected output: "lazy"
 
+// DOM Access: By Id
+
+<img id="kittenPic" src="http://placekitten.com/g/200/300" alt="cat"/>	/* This line of html can be found by using:
+document.getElementById();  */
+var imgKitten = document.getElementById('kittenPic');
+
+// DOM Access: By Tag Name
+
+/*<ul>
+  <li>Daisy</li>		 // This line of html can be found by using document.getElementsByTagName(tagName);
+  <li>Tulip</li>
+</ul>
+*/
+
+var listItems = document.getElementsByTagName('li');
+
+for (var i = 0; i < listItems.length; i++) {
+  var listItem = listItems[i];
+}
+
+// Newer browsers can get classname or cssselectors
+
+document.getElementsByClassName(className);
+document.querySelector(cssQuery);
+document.querySelectorAll(cssQuery);
+
+// getElement vs. getElements
+
+document.getElementById('uniqueID'); 							// getElement returns a single node
+
+document.getElementsByTagName('p'); 							// getElements returns multiple nodes
+var specificParagraph = document.getElementsByTagName('p')[2];	// To modify a single node, you will need to use bracket notation to get the correct one
+
+// To change DOM Nodes e.g. id's or classes
+
+<img id="kittenPic" src="http://placekitten.com/g/200/300" alt="cat"/> 
+
+var imgKitten = document.getElementById('kittenPic');
+
+// will return src attribute on image
+imgKitten.src
+
+// We can now set our src to a new src
+imgKitten.src = 'http://placekitten.com/g/600/500';
+
+// DOM Nodes: Getting and Setting Attributes
+
+<img id="kittenPic" src="http://placekitten.com/g/200/300" alt="cat"/>
+
+var imgKitten = document.getElementById('kittenPic');
+
+// will return src attribute on image
+imgKitten.getAttribute('src');
+
+// will set our src to a new src
+imgKitten.setAttribute('src', 'http://placekitten.com/g/600/500');
+
+
+
+
+
 
 
