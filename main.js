@@ -37,7 +37,8 @@ console.log(Array.isArray(fruits));
 console.log(fruits.indexOf('oranges'));
 console.log(fruits);
 
-// Object literals
+// Object literals let us store a collection of properties. REMEMBER THE : AND ,
+
 const person = {
 	firstName: 'Hamal',
 	lastName: 'Patel',
@@ -61,7 +62,8 @@ console.log(person.hobbies[1]);
 // To get the city
 console.log(person.address.city);
 
-// Arrays of objects
+// Arrays can hold any data types, therefore they can hold objects
+
 const todos = [
 	{
 	id: 1,
@@ -82,16 +84,29 @@ const todos = [
 
 console.log(todos[1].text); // To get 'meeting with boss'
 
+// Combining functions with objects
+
+var favouriteRecipe = {
+  recipeTitle : 'Pizza',
+  servings : 5,
+  ingredients : ['dough', 'tomato', 'cheese'],
+  directions : 'First roll the dough into a circle and grate the cheese.'
+}
+
+function letsCook(){
+  console.log(`I'm hungry! Let's cook ${favouriteRecipe.recipeTitle}`);
+}
+
+letsCook();		// Output will be 'I'm hungry! Let's cook Pizza'
+
+
 // To convert it to JSON to send data to server
+
 const todoJSON = JSON.stringify(todos);
 console.log(todoJSON);
 
-// For loops
-for(let i = 0; i<10; i++){
-	console.log(`for loop number: ${i}`);
-}
-
 // while loops
+
 let i = 0;
 while(i < 10){
 	console.log(`while loop number: ${i}`);
@@ -103,23 +118,67 @@ for(let x of todos){
 	console.log(x.text);
 }
 
+// .length is how many things are in an array
+var favouriteFoods = ['chicken', 'lamb', 'rice'];
+for (var i = 0; i< favouriteFoods.length; i++){
+  console.log(favouriteFoods[i]);	// This will list all the items in the array
+}
 
-// forEACH, the x variable can be anything
-todos.forEach(function(x){
-	console.log(x.text);
-});
+// Objects can also hold functions.
 
+var jolene = {
+  age: 21,
+  hairColor: 'Auburn',
+  talk: function() {
+    console.log('Hello!');
+  },
+  eat: function(food) {
+    console.log('Yum, I love ' + food);
+  }
+};
 
-const todoText = todos.map(function(x){
-	return x.text;
-});
+jolene.talk();				// call object methods with .notation
+jolene.eat('pizza');
 
-console.log(todoText);
+// Loops & if statements
 
+for (var i = 1; i <= 100; i++) {	// Count from 1 to 100
+  if (i % 3 === 0) {				// This checks if the number is divisible by 3 with a remainder 0.
+    console.log(' Fizz');			// Says 'Fizz' after multiples of three
+  } else if (i % 5 === 0) {
+    console.log(' Buzz');			// Says 'Buzz' after multiples of five
+  } else {
+    console.log(i);
+  }
+}
 
+// Break statement
 
+for (var i = 100; i <= 200; i++) {		// Count from 100 to 200
+  console.log('Testing ' + i);
 
+  //Stop at the first multiple of 7
+  if (i % 7 === 0) {
+    console.log('Found it! ' + i);
+    break;    // This statement exits the loop
+  }
+}
 
+// .slice
+
+var str = 'The quick brown fox jumps over the lazy dog.';
+
+console.log(str.slice(31));				// the first 31 characters are cut.
+// expected output: "the lazy dog."
+
+console.log(str.slice(4, 19));			// the first 19 characters are shown except for the first 4 that are cut.
+// expected output: "quick brown fox"
+
+console.log(str.slice(-4));				// the last 4 characters are displayed.
+// expected output: "dog."
+
+console.log(str.slice(-9, -5));			// the second -5 cuts out the dog.
+// expected output: "lazy"
 
 
 
