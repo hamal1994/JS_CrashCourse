@@ -237,6 +237,43 @@ imgKitten.getAttribute('src');
 // will set our src to a new src
 imgKitten.setAttribute('src', 'http://placekitten.com/g/600/500');
 
+// DOM Nodes: Styles
+
+var pageBody = document.getElementsByTagName('body')[0];		// This is targeting the body
+pageBody.style.color = 'red';									// The .style.color can be used to change the body's color
+// It's basically the same as doing this:
+body {							// CSS
+  color: red;	
+}
+
+// The rule of thumb in JavaScript is to change CSS styles from "-" to camelCase
+
+// Example:
+body {							// CSS
+  background-color: pink;
+  padding-top: 10px;
+}
+// Use this JS:
+var pageBody = document.getElementsByTagName('body')[0]
+pageBody.style.backgroundColor = 'pink';					//These are camelcased now compared to above
+pageBody.style.paddingTop = '10px';							//
+
+// DOM innerHTML
+
+//The entire body can be overwritten, for example:
+var pageBody = document.getElementsByTagName('body')[0];
+pageBody.innerHTML = '<h1>Oh Noes!</h1><p>I changed the whole page!</p>'		// The whole page's body will be this now
+
+pageBody.innerHTML += '...just adding this at the end of the page.';			// Or just add some new content to the end
+
+
+
+
+
+
+
+
+
 
 
 
