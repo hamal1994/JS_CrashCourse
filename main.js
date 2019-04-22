@@ -188,11 +188,11 @@ var imgKitten = document.getElementById('kittenPic');
 
 // DOM Access: By Tag Name
 
-/*<ul>
-  <li>Daisy</li>		 // This line of html can be found by using document.getElementsByTagName(tagName);
+<ul>
+  <li>Daisy</li>		   ////This line of html can be found by using document.getElementsByTagName(tagName);////////
   <li>Tulip</li>
-</ul>
-*/
+<ul>/
+
 
 var listItems = document.getElementsByTagName('li');
 
@@ -265,6 +265,80 @@ var pageBody = document.getElementsByTagName('body')[0];
 pageBody.innerHTML = '<h1>Oh Noes!</h1><p>I changed the whole page!</p>'		// The whole page's body will be this now
 
 pageBody.innerHTML += '...just adding this at the end of the page.';			// Or just add some new content to the end
+
+// You can also target one specific element's content
+<p id="warning"><p>
+// To add content to the above paragraph use this:
+var warningParagraph = document.getElementById('warning');
+
+warningParagraph.innerHTML = 'Danger Will Robinson!';
+
+// Creating New Nodes
+
+var pageBody = document.getElementsByTagName('body')[0];
+
+// create our image tag with attributes
+var newImg = document.createElement('img');
+newImg.src = 'http://placekitten.com/g/500/200';
+newImg.style.border = '1px solid black';
+
+// add our image to the body
+pageBody.appendChild(newImg);
+
+// create a paragraph tag with content
+var newParagraph  = document.createElement('p');
+var paragraphText = document.createTextNode('Squee!');
+newParagraph.appendChild(paragraphText);
+
+// add our new paragraph to the body
+pageBody.appendChild(newParagraph);
+
+// Events
+
+// An event is an object that is sent when a user interacts with the webpage, for example JS creates a event when a user clicks an element
+element.addEventListener('click', function(event) {
+  // code to be executed when user clicks
+});
+
+//common types of events:
+click: Occurs when the user clicks on an element
+mouseover: Occurs when the pointer is moved onto an element
+mouseout: Occurs when the pointer is moved off an element
+keyup: Occurs when the user releases a key
+load: Occurs when a document has been loaded
+focus: Occurs when an element gets focus
+blur: Occurs when an element loses focus
+
+// Functions can be called directly from html:
+<button id="myBtn" onclick="sayHi()">Click Me!<button/>   //enter onclick="" in the html to call the function
+
+function sayHi (event) {
+  alert('Hi!');
+};
+
+// You can call a function from the addEventListener:
+<button id="myBtn">Click Me!<button/>
+var button = document.getElementById("myBtn");
+
+button.addEventListener("click", function (event) {
+  alert("Hi!");
+});
+or
+
+var button = document.getElementById("myBtn");
+
+var sayHi = function (event) {
+  alert("Hi!");
+};
+
+button.addEventListener("click", sayHi);
+
+
+
+
+
+
+
 
 
 
