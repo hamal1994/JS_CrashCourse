@@ -237,7 +237,7 @@ imgKitten.getAttribute('src');
 // will set our src to a new src
 imgKitten.setAttribute('src', 'http://placekitten.com/g/600/500');
 
-// DOM Nodes: Styles
+// DOM Nodes: Changing the Styles with
 
 var pageBody = document.getElementsByTagName('body')[0];		// This is targeting the body
 pageBody.style.color = 'red';									// The .style.color can be used to change the body's color
@@ -333,20 +333,75 @@ var sayHi = function (event) {
 
 button.addEventListener("click", sayHi);
 
+// Preventing Defaults
 
+// the event object has a built-in method to prevent the default behavior
+<a id="myLink" href="https://www.girldevelopit.com">GDI<a/>  
 
+// This code means that when you click on the link, it will not work
+var link = document.getElementById("myLink");
 
+link.addEventListener("click", function(event) {
+  event.preventDefault();
+}); 
 
+// currentTarget
 
+// The event's currentTarget references the element the event listener was attached to.
+<button id="myBtn">Click Me!<a>
 
+// Once the link is clicked on, it should change its style to this:
+var myButton = document.getElementById("myBtn");
 
+myButton.addEventListener("click", function(event) {
+  btn = event.currentTarget;
 
+  btn.style.backgroundColor = 'red';    
+  btn.innerHTML = 'Clicked!';
+});
 
+// Forms
 
+// You can collect information from users to use in your code. The most common method is an HTML form
+<form id="userForm">
+  <label for="name">First Name:</label>
+  <input type="text" id="firstName"/>
+  <input type="radio" name="married" value="Yes" checked /> Yes
+  <input type="radio" name="married" value="No" /> No
+  <input type="submit" id="submitBtn" value="Submit" />
+<form>
 
+// You retrieve the values of form elements using the value method.
+var name = document.getElementById('firstName').value;
+console.log(name);
+// You can retrieve the value of a form at any time. Even when an event like blur is triggered (when a form element loses focus).
 
+// Radio Buttons
 
+// Radio buttons usually do not have IDs, so you will need to use a for loop to get the value on each radio:
+var radios = document.getElementsByName('married');
 
+var length = radios.length;
+
+for (var i = 0; i < length; i++) {
+  if (radios[i].checked) {
+    var radioButtonValue = radios[i].value;
+    // only one radio can be checked, so stop now
+    break;
+  }
+}
+
+// Submit buttons
+
+// If you are going to retrieve form values with the submit button, be sure to prevent the default action!
+var submitButton = document.getElementById('submitBtn');
+
+submitButton.addEventListener("click", function(event) {
+  event.preventDefault();       // Default action is prevented
+
+  var name = document.getElementById('firstName').value;
+  console.log(name);
+})
 
 
 
