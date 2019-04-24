@@ -225,7 +225,7 @@ imgKitten.src
 // We can now set our src to a new src
 imgKitten.src = 'http://placekitten.com/g/600/500';
 
-// DOM Nodes: Getting and Setting Attributes
+// DOM Nodes: Getting and Setting Attributes, changing an image to a new one
 
 <img id="kittenPic" src="http://placekitten.com/g/200/300" alt="cat"/>
 
@@ -260,11 +260,23 @@ pageBody.style.paddingTop = '10px';							//
 
 // DOM innerHTML
 
-//The entire body can be overwritten, for example:
+//The entire body can be replaced or new content can be added, for example:
 var pageBody = document.getElementsByTagName('body')[0];
 pageBody.innerHTML = '<h1>Oh Noes!</h1><p>I changed the whole page!</p>'		// The whole page's body will be this now
-
 pageBody.innerHTML += '...just adding this at the end of the page.';			// Or just add some new content to the end
+
+// HTML:
+<ul>
+    <li>Nickname:
+      <span id="nickname"></span>
+    <li/>
+
+// JS:
+document.getElementById('nickname').innerHTML = 'Hamz';
+
+// Outcome:
+Nickname: Hamz
+
 
 // You can also target one specific element's content
 <p id="warning"><p>
@@ -288,7 +300,7 @@ pageBody.appendChild(newImg);
 // create a paragraph tag with content
 var newParagraph  = document.createElement('p');
 var paragraphText = document.createTextNode('Squee!');
-newParagraph.appendChild(paragraphText);
+newParagraph.appendChild(paragraphText);  // Adds the paragraph text to the paragraph element
 
 // add our new paragraph to the body
 pageBody.appendChild(newParagraph);
