@@ -191,7 +191,7 @@ var imgKitten = document.getElementById('kittenPic');
 <ul>
   <li>Daisy</li>		   ////This line of html can be found by using document.getElementsByTagName(tagName);////////
   <li>Tulip</li>
-<ul>/
+</ul>
 
 
 var listItems = document.getElementsByTagName('li');
@@ -269,7 +269,8 @@ pageBody.innerHTML += '...just adding this at the end of the page.';			// Or jus
 <ul>
     <li>Nickname:
       <span id="nickname"></span>
-    <li/>
+    </li>
+</ul>
 
 // JS:
 document.getElementById('nickname').innerHTML = 'Hamz';
@@ -279,7 +280,7 @@ Nickname: Hamz
 
 
 // You can also target one specific element's content
-<p id="warning"><p>
+<p id="warning"></p>
 // To add content to the above paragraph use this:
 var warningParagraph = document.getElementById('warning');
 
@@ -322,14 +323,14 @@ focus: Occurs when an element gets focus
 blur: Occurs when an element loses focus
 
 // Functions can be called directly from html:
-<button id="myBtn" onclick="sayHi()">Click Me!<button/>   //enter onclick="" in the html to call the function
+<button id="myBtn" onclick="sayHi()">Click Me!</button>   //enter onclick="" in the html to call the function
 
 function sayHi (event) {
   alert('Hi!');
 };
 
 // You can call a function from the addEventListener:
-<button id="myBtn">Click Me!<button/>
+<button id="myBtn">Click Me!</button>
 var button = document.getElementById("myBtn");
 
 button.addEventListener("click", function (event) {
@@ -348,7 +349,7 @@ button.addEventListener("click", sayHi);
 // Preventing Defaults
 
 // the event object has a built-in method to prevent the default behavior
-<a id="myLink" href="https://www.girldevelopit.com">GDI<a/>  
+<a id="myLink" href="https://www.girldevelopit.com">GDI</a>  
 
 // This code means that when you click on the link, it will not work
 var link = document.getElementById("myLink");
@@ -360,7 +361,7 @@ link.addEventListener("click", function(event) {
 // currentTarget
 
 // The event's currentTarget references the element the event listener was attached to.
-<button id="myBtn">Click Me!<a>
+<button id="myBtn">Click Me!</a>
 
 // Once the link is clicked on, it should change its style to this:
 var myButton = document.getElementById("myBtn");
@@ -381,7 +382,7 @@ myButton.addEventListener("click", function(event) {
   <input type="radio" name="married" value="Yes" checked /> Yes
   <input type="radio" name="married" value="No" /> No
   <input type="submit" id="submitBtn" value="Submit" />
-<form>
+</form>
 
 // You retrieve the values of form elements using the value method.
 var name = document.getElementById('firstName').value;
@@ -415,9 +416,14 @@ submitButton.addEventListener("click", function(event) {
   console.log(name);
 })
 
+// The Math.floor() function returns the largest integer less than or equal to a given number:
 
-
-
-
-
+console.log(Math.floor(5.99));
+// expected output: 5
+console.log(Math.floor(5.05));
+// expected output: 5
+console.log(Math.floor(5));
+// expected output: 5
+console.log(Math.floor(-5.05));
+// expected output: -6
 
